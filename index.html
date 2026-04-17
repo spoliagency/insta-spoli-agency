@@ -104,6 +104,24 @@ h1 em { font-style: italic; color: var(--brand); }
   font-size: 17px; color: var(--text2); line-height: 1.6;
   max-width: 580px; margin-bottom: 32px;
 }
+.hero-actions {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  margin: 0 0 26px;
+}
+.hero-download {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 48px; padding: 0 22px; border-radius: 8px;
+  background: var(--brand); color: #fff;
+  font-family: var(--sans); font-size: 14px; font-weight: 700;
+  text-decoration: none; letter-spacing: 0;
+  box-shadow: 0 8px 24px rgba(232,34,10,0.28);
+  transition: background .15s, transform .15s, box-shadow .15s;
+}
+.hero-download:hover {
+  background: var(--brand-lt);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(232,34,10,0.36);
+}
 .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .hero-tag {
   display: inline-flex; align-items: center; gap: 6px;
@@ -435,6 +453,9 @@ code {
   <div class="hero-eyebrow">Guia Completo · Git & Claude Code</div>
   <h1>Nunca mais quebre<br>seu projeto com<br><em>Claude Code</em></h1>
   <p class="hero-sub">Controle de versão profissional do zero — commits, branches, conflitos e o fluxo de trabalho correto para vibecoders que usam o Claude Code.</p>
+  <div class="hero-actions">
+    <a class="hero-download" href="downloads/guia-git-spoli.pdf" download>Baixar guia em PDF</a>
+  </div>
   <div class="hero-tags">
     <span class="hero-tag">🌿 Git do zero</span>
     <span class="hero-tag">💻 Claude Code</span>
