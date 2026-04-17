@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spoli Agency | Materiais gratuitos</title>
+  <meta name="description" content="Materiais gratuitos da Spoli Agency para automacao, vendas e captacao de leads.">
+  <style>
+    :root {
+      --ink: #151515;
+      --muted: #5d6266;
+      --line: #d9ddd6;
+      --paper: #f8faf5;
+      --white: #ffffff;
+      --teal: #0f766e;
+      --teal-dark: #0b4f49;
+      --rose: #d94672;
+      --sun: #f2c94c;
+      --mint: #d9f2e7;
+      --shadow: 0 18px 50px rgba(21, 21, 21, 0.14);
+      color-scheme: light;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      letter-spacing: 0;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+      letter-spacing: 0;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(21, 21, 21, 0.08);
+      background: rgba(248, 250, 245, 0.92);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      background: var(--ink);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      background: #1f2d2a;
+      color: var(--white);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.64)),
+        url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=80") center/cover;
+      transform: scale(1.02);
+    }
+
+    .hero-inner {
+      position: relative;
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 112px 0 72px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 18px;
+      color: #f8ffd7;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 3px;
+      border-radius: 2px;
+      background: var(--sun);
+    }
+
+    h1 {
+      max-width: 780px;
+      margin: 0;
+      font-size: clamp(42px, 9vw, 96px);
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 610px;
+      margin: 24px 0 0;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 19px;
+      line-height: 1.6;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      border: 0;
+      border-radius: 8px;
+      min-height: 48px;
+      padding: 0 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .button-primary {
+      background: var(--sun);
+      color: var(--ink);
+    }
+
+    .button-secondary {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.34);
+    }
+
+    .button-dark {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .button-light {
+      background: var(--white);
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+
+    .button:disabled {
+      cursor: wait;
+      opacity: 0.72;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section.alt {
+      background: var(--white);
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 52px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .section-heading p {
+      max-width: 430px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .materials {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .material-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .material-image {
+      aspect-ratio: 16 / 10;
+      width: 100%;
+      object-fit: cover;
+      background: var(--mint);
+    }
+
+    .material-body {
+      padding: 20px;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      border-radius: 8px;
+      padding: 0 9px;
+      background: var(--mint);
+      color: var(--teal-dark);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .material-card h3 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .material-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .material-card .button {
+      margin-top: auto;
+      width: 100%;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .step {
+      border-top: 4px solid var(--teal);
+      padding: 22px 0 0;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .setup {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .setup p {
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    pre {
+      margin: 0;
+      max-height: 520px;
+      overflow: auto;
+      border-radius: 8px;
+      border: 1px solid #263330;
+      background: #101715;
+      color: #f1f7ef;
+      padding: 18px;
+      font-size: 13px;
+      line-height: 1.55;
+      white-space: pre-wrap;
+    }
+
+    .notice {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      background: #fff9df;
+      color: #3e3320;
+      line-height: 1.55;
+    }
+
+    .footer {
+      background: var(--ink);
+      color: var(--white);
+      padding: 34px 0;
+    }
+
+    .footer .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 30;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(0, 0, 0, 0.58);
+    }
+
+    .modal.is-open {
+      display: flex;
+    }
+
+    .dialog {
+      width: min(620px, 100%);
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .dialog-media {
+      height: 150px;
+      background:
+        linear-gradient(90deg, rgba(15, 118, 110, 0.84), rgba(217, 70, 114, 0.58)),
+        url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80") center/cover;
+    }
+
+    .dialog-body {
+      padding: 24px;
+    }
+
+    .dialog-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .dialog h2 {
+      font-size: 32px;
+    }
+
+    .close {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      width: 40px;
+      height: 40px;
+      background: var(--white);
+      cursor: pointer;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      color: var(--ink);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0 13px;
+      background: var(--white);
+      color: var(--ink);
+    }
+
+    input:focus {
+      outline: 3px solid rgba(15, 118, 110, 0.18);
+      border-color: var(--teal);
+    }
+
+    .check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--muted);
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .check input {
+      width: 18px;
+      min-height: 18px;
+      margin-top: 2px;
+    }
+
+    .form-message {
+      min-height: 22px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .success-panel {
+      display: none;
+      border-top: 1px solid var(--line);
+      margin-top: 18px;
+      padding-top: 18px;
+    }
+
+    .success-panel.is-visible {
+      display: grid;
+      gap: 12px;
+    }
+
+    @media (max-width: 880px) {
+      .nav {
+        min-height: 64px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .section-heading,
+      .setup {
+        display: grid;
+      }
+
+      .materials,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 82vh;
+      }
+
+      .hero-inner {
+        padding: 96px 0 56px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .section {
+        padding: 58px 0;
+      }
+
+      .hero-copy {
+        font-size: 17px;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .dialog-body {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Principal">
+      <a class="brand" href="#topo" aria-label="Spoli Agency">
+        <span class="brand-mark">S</span>
+        <span>Spoli Agency</span>
+      </a>
+      <div class="nav-links">
+        <a href="#materiais">Materiais</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#integracao">Google Sheets</a>
+        <a href="https://instagram.com/spoliagency" target="_blank" rel="noreferrer">@spoliagency</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="topo">
+    <section class="hero" aria-label="Materiais gratuitos Spoli Agency">
+      <div class="hero-inner">
+        <p class="eyebrow">Biblioteca gratuita</p>
+        <h1>Materiais prontos para vender melhor no Instagram.</h1>
+        <p class="hero-copy">Baixe checklists, roteiros e guias da Spoli Agency. Preencha seus dados uma vez e receba o material escolhido na hora.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#materiais">Ver materiais</a>
+          <a class="button button-secondary" href="https://instagram.com/spoliagency" target="_blank" rel="noreferrer">Ir para o Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="materiais">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>Escolha seu material</h2>
+          <p>Conteudos gratuitos para organizar processos, captar contatos e transformar seguidores em oportunidades reais.</p>
+        </div>
+        <div class="materials" id="materialsList"></div>
+      </div>
+    </section>
+
+    <section class="section alt" id="como-funciona">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>Do Instagram para sua lista</h2>
+          <p>Use o link na bio, nos stories e nas respostas automaticas para entregar valor e registrar cada novo contato.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <strong>1. A pessoa escolhe</strong>
+            <p>Ela acessa a pagina e seleciona o conteudo que quer baixar.</p>
+          </article>
+          <article class="step">
+            <strong>2. Os dados entram</strong>
+            <p>Nome, telefone, e-mail, material escolhido e origem ficam salvos na sua planilha.</p>
+          </article>
+          <article class="step">
+            <strong>3. O arquivo libera</strong>
+            <p>O download aparece apos o cadastro e o lead fica pronto para relacionamento comercial.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="integracao">
+      <div class="wrap setup">
+        <div>
+          <p class="eyebrow">Configuracao</p>
+          <h2>Conecte com Google Sheets</h2>
+          <p>Crie uma planilha, abra Extensoes > Apps Script, cole o codigo ao lado e publique como aplicativo da Web. Depois cole a URL gerada na constante <strong>LEAD_WEBHOOK_URL</strong> dentro deste HTML.</p>
+          <div class="notice">
+            No GitHub Pages, o HTML nao pode guardar token privado do Notion ou Google. O Apps Script roda na sua conta e recebe os leads sem expor senha no navegador.
+          </div>
+        </div>
+        <pre><code>const SHEET_NAME = 'Leads';
+
+function doPost(e) {
+  const lock = LockService.getScriptLock();
+  lock.waitLock(10000);
+
+  try {
+    const sheet = getLeadSheet_();
+    const data = JSON.parse(e.postData.contents || '{}');
+
+    sheet.appendRow([
+      new Date(),
+      data.name || '',
+      data.phone || '',
+      data.email || '',
+      data.materialTitle || '',
+      data.materialId || '',
+      data.source || '',
+      data.pageUrl || '',
+      data.userAgent || ''
+    ]);
+
+    return ContentService
+      .createTextOutput(JSON.stringify({ ok: true }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (error) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ ok: false, error: String(error) }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+function getLeadSheet_() {
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  let sheet = spreadsheet.getSheetByName(SHEET_NAME);
+
+  if (!sheet) {
+    sheet = spreadsheet.insertSheet(SHEET_NAME);
+  }
+
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow([
+      'Data',
+      'Nome',
+      'Telefone',
+      'Email',
+      'Material',
+      'ID do material',
+      'Origem',
+      'Pagina',
+      'Navegador'
+    ]);
+  }
+
+  return sheet;
+}</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>Spoli Agency · Materiais gratuitos para automacao e vendas</p>
+      <a href="https://instagram.com/spoliagency" target="_blank" rel="noreferrer">@spoliagency</a>
+    </div>
+  </footer>
+
+  <div class="modal" id="leadModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="dialog">
+      <div class="dialog-media" aria-hidden="true"></div>
+      <div class="dialog-body">
+        <div class="dialog-top">
+          <div>
+            <p class="eyebrow">Download gratuito</p>
+            <h2 id="modalTitle">Receber material</h2>
+          </div>
+          <button class="close" type="button" id="closeModal" aria-label="Fechar">×</button>
+        </div>
+
+        <form class="form-grid" id="leadForm">
+          <input type="hidden" name="materialId" id="materialId">
+          <label>
+            Nome
+            <input name="name" id="leadName" autocomplete="name" required>
+          </label>
+          <label>
+            WhatsApp
+            <input name="phone" id="leadPhone" autocomplete="tel" inputmode="tel" required>
+          </label>
+          <label>
+            E-mail
+            <input name="email" id="leadEmail" autocomplete="email" inputmode="email" type="email" required>
+          </label>
+          <label class="check">
+            <input name="consent" id="leadConsent" type="checkbox" required>
+            <span>Aceito receber comunicacoes da Spoli Agency sobre automacao, vendas e conteudos gratuitos.</span>
+          </label>
+          <button class="button button-dark" id="submitLead" type="submit">Liberar download</button>
+          <div class="form-message" id="formMessage" role="status"></div>
+        </form>
+
+        <div class="success-panel" id="successPanel">
+          <strong>Cadastro recebido.</strong>
+          <p id="successText">Seu material esta pronto.</p>
+          <button class="button button-primary" id="downloadNow" type="button">Baixar agora</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const LEAD_WEBHOOK_URL = "";
+
+    const materials = [
+      {
+        id: "checklist-automacao-instagram",
+        title: "Checklist de automacao no Instagram",
+        type: "Checklist",
+        format: "TXT",
+        image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1100&q=80",
+        description: "Pontos essenciais para organizar captura, resposta rapida, segmentacao e follow-up.",
+        fileName: "checklist-automacao-instagram.txt",
+        inlineContent: `CHECKLIST DE AUTOMACAO NO INSTAGRAM
+
+1. Defina a promessa do material gratuito.
+2. Crie uma palavra-chave para stories e directs.
+3. Separe nome, telefone e email em uma base unica.
+4. Registre a origem de cada lead.
+5. Entregue o arquivo imediatamente apos o cadastro.
+6. Envie uma mensagem de boas-vindas.
+7. Faca follow-up em ate 24 horas.
+8. Marque os leads por interesse.
+9. Revise semanalmente os materiais mais baixados.
+10. Crie uma oferta relacionada ao material.`
+      },
+      {
+        id: "roteiro-captacao-leads",
+        title: "Roteiro de captacao de leads",
+        type: "Roteiro",
+        format: "TXT",
+        image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1100&q=80",
+        description: "Um roteiro simples para chamar seguidores, entregar valor e iniciar uma conversa comercial.",
+        fileName: "roteiro-captacao-leads.txt",
+        inlineContent: `ROTEIRO DE CAPTACAO DE LEADS
+
+Story 1:
+"Tenho um material gratuito para quem quer organizar melhor as vendas pelo Instagram."
+
+Story 2:
+"Ele mostra o passo a passo para capturar contatos e fazer follow-up sem perder oportunidades."
+
+Story 3:
+"Quer receber? Responda MATERIAL ou acesse o link da bio."
+
+Mensagem apos cadastro:
+"Pronto, seu material foi liberado. Depois me conta qual etapa voce quer automatizar primeiro: atendimento, captacao ou follow-up?"`
+      },
+      {
+        id: "guia-site-materiais-gratuitos",
+        title: "Guia rapido para publicar materiais gratuitos",
+        type: "Guia",
+        format: "TXT",
+        image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1100&q=80",
+        description: "Estrutura para hospedar arquivos, capturar dados e manter uma base de leads pronta para campanha.",
+        fileName: "guia-site-materiais-gratuitos.txt",
+        inlineContent: `GUIA RAPIDO PARA PUBLICAR MATERIAIS GRATUITOS
+
+1. Liste os materiais que serao entregues.
+2. Hospede os arquivos no Drive, GitHub ou outro local publico.
+3. Cadastre cada link no array "materials" do HTML.
+4. Configure o Google Apps Script com a planilha de leads.
+5. Cole a URL do Apps Script em LEAD_WEBHOOK_URL.
+6. Publique o HTML no GitHub Pages.
+7. Use o link na bio e nos stories.
+8. Analise quais materiais geram leads mais qualificados.`
+      }
+    ];
+
+    const modal = document.querySelector("#leadModal");
+    const closeModal = document.querySelector("#closeModal");
+    const materialsList = document.querySelector("#materialsList");
+    const leadForm = document.querySelector("#leadForm");
+    const modalTitle = document.querySelector("#modalTitle");
+    const materialId = document.querySelector("#materialId");
+    const submitLead = document.querySelector("#submitLead");
+    const formMessage = document.querySelector("#formMessage");
+    const successPanel = document.querySelector("#successPanel");
+    const successText = document.querySelector("#successText");
+    const downloadNow = document.querySelector("#downloadNow");
+
+    let selectedMaterial = null;
+
+    function renderMaterials() {
+      materialsList.innerHTML = materials.map((material) => `
+        <article class="material-card">
+          <img class="material-image" src="${material.image}" alt="" loading="lazy">
+          <div class="material-body">
+            <div class="tag-row">
+              <span class="tag">${material.type}</span>
+              <span class="tag">${material.format}</span>
+            </div>
+            <h3>${material.title}</h3>
+            <p>${material.description}</p>
+            <button class="button button-dark" type="button" data-material="${material.id}">Baixar material</button>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function openLeadModal(material) {
+      selectedMaterial = material;
+      materialId.value = material.id;
+      modalTitle.textContent = material.title;
+      successPanel.classList.remove("is-visible");
+      leadForm.reset();
+      formMessage.textContent = "";
+      submitLead.disabled = false;
+      modal.classList.add("is-open");
+      document.querySelector("#leadName").focus();
+    }
+
+    function closeLeadModal() {
+      modal.classList.remove("is-open");
+    }
+
+    function getSource() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("utm_source") || params.get("origem") || "site";
+    }
+
+    function normalizeLead(formData) {
+      return {
+        name: String(formData.get("name") || "").trim(),
+        phone: String(formData.get("phone") || "").trim(),
+        email: String(formData.get("email") || "").trim().toLowerCase(),
+        materialId: selectedMaterial.id,
+        materialTitle: selectedMaterial.title,
+        source: getSource(),
+        pageUrl: window.location.href,
+        userAgent: navigator.userAgent
+      };
+    }
+
+    async function saveLead(lead) {
+      const localLeads = JSON.parse(localStorage.getItem("spoli_leads_backup") || "[]");
+      localLeads.push({ ...lead, createdAt: new Date().toISOString() });
+      localStorage.setItem("spoli_leads_backup", JSON.stringify(localLeads.slice(-100)));
+
+      if (!LEAD_WEBHOOK_URL) {
+        return { ok: true, localOnly: true };
+      }
+
+      await fetch(LEAD_WEBHOOK_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(lead)
+      });
+
+      return { ok: true };
+    }
+
+    function releaseDownload(material) {
+      if (material.downloadUrl) {
+        window.open(material.downloadUrl, "_blank", "noopener,noreferrer");
+        return;
+      }
+
+      const blob = new Blob([material.inlineContent], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = material.fileName;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    materialsList.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-material]");
+      if (!button) return;
+
+      const material = materials.find((item) => item.id === button.dataset.material);
+      if (material) openLeadModal(material);
+    });
+
+    closeModal.addEventListener("click", closeLeadModal);
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) closeLeadModal();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeLeadModal();
+    });
+
+    leadForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!selectedMaterial) return;
+
+      submitLead.disabled = true;
+      formMessage.textContent = "Registrando seus dados...";
+
+      try {
+        const lead = normalizeLead(new FormData(leadForm));
+        const result = await saveLead(lead);
+
+        formMessage.textContent = result.localOnly
+          ? "Download liberado. Configure o Google Sheets para receber os proximos leads automaticamente."
+          : "Download liberado.";
+
+        successText.textContent = `Clique para baixar: ${selectedMaterial.title}.`;
+        successPanel.classList.add("is-visible");
+        releaseDownload(selectedMaterial);
+      } catch (error) {
+        formMessage.textContent = "Nao foi possivel registrar agora. Tente novamente em instantes.";
+        submitLead.disabled = false;
+      }
+    });
+
+    downloadNow.addEventListener("click", () => {
+      if (selectedMaterial) releaseDownload(selectedMaterial);
+    });
+
+    renderMaterials();
+  </script>
+</body>
+</html>
